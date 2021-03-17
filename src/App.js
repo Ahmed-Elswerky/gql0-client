@@ -6,9 +6,12 @@ import Courses from './Courses';
 import AddPost from './addpost';
 
 const client = new ApolloClient({
-	uri: 'https://swerky-gql0.herokuapp.com',
+	uri: 'https://swerky-gql0.herokuapp.com/',
 	fetchOptions: {
 		mode: 'no-cors'
+	},
+	headers: {
+		'Access-Control-Allow-Credentials': true
 	},
 	onError: (e) => {
 		console.log(e);

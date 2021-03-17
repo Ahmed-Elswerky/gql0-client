@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 import './App.css';
+import Courses from './Courses';
+import AddPost from './addpost';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const client = new ApolloClient({
+	uri: 'https://swerky-gql0.herokuapp.com',
+	onError: (e) => {
+		console.log(e);
+	}
+});
 
+const App = () => (
+	<ApolloProvider client={client}>
+		<div>
+			<Courses />
+			<AddPost />
+		</div>
+	</ApolloProvider>
+);
 export default App;

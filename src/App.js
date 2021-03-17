@@ -7,6 +7,9 @@ import AddPost from './addpost';
 
 const client = new ApolloClient({
 	uri: 'https://swerky-gql0.herokuapp.com',
+	fetchOptions: {
+		mode: 'no-cors'
+	},
 	onError: (e) => {
 		console.log(e);
 	}

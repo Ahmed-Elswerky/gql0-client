@@ -6,13 +6,13 @@ import Courses from './Courses';
 import AddPost from './addpost';
 
 const client = new ApolloClient({
-	uri: 'https://swerky-gql0.herokuapp.com/',
-	fetchOptions: {
-		mode: 'no-cors'
-	},
-	headers: {
-		'Access-Control-Allow-Credentials': true
-	},
+	uri: 'https://swerky-gql0.herokuapp.com/graphql/',
+	// fetchOptions: {
+	// 	mode: 'no-cors'
+	// },
+	// headers: {
+	// 	'Access-Control-Allow-Credentials': true
+	// },
 	onError: (e) => {
 		console.log(e);
 	}
